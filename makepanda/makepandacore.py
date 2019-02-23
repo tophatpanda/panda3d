@@ -2633,6 +2633,10 @@ def SdkLocateVulkan():
 
         print("Using Vulkan SDK %s" % (version))
         SDK["VULKAN"] = path + '/' + version
+    else:
+        # The Vulkan SDK installer (should) define VULKAN_SDK to the correct
+        # directory.
+        SDK["VULKAN"] = os.environ["VULKAN_SDK"]
 
 ########################################################################
 ##
